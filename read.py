@@ -25,3 +25,14 @@ for d in data:
     if 'good' in d:
         good.append(d)
 print('一共有',len(good),'筆留言，有提到good這個字')
+
+"""
+list comprehension:
+1.
+    good = [d for d in data if 'good' in d]
+    有提到good的留言，就加進good[]
+
+2.
+    bad = ['bad' in d for d in data]
+    有提到bad的留言，印True，否則印False
+"""
