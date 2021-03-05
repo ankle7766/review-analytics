@@ -36,3 +36,32 @@ list comprehension:
     bad = ['bad' in d for d in data]
     有提到bad的留言，印True，否則印False
 """
+
+
+#新增一個功能 :
+#哪一個字最常出現
+wc = {} #word_count
+for d in data:
+    words = d.split()  #預設就是空白鍵，且會將連續空白都切掉
+    for word in words:
+        if word in wc:
+            wc[word] += 1
+        else:
+            wc[word] = 1  #新增一個key到字典，並賦值為1
+
+for word in wc:
+    if wc[word] > 1000000:
+        print(word,wc[word])
+
+print(len(wc))
+print(wc['Allen'])
+
+while True:
+    word = input("請問你想查甚麼字?")
+    if word == 'q':
+        print("感謝使用本功能。")
+        break
+    if word in wc:
+        print(word,"出現過的次數為:",wc[word])
+    else:
+        print('沒有出現過這個字。')
